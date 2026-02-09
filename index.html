@@ -61,13 +61,15 @@
           </div>
           <div class="col-lg-6">
             <div class="card shadow-sm">
-              <img
-                src="assets/img/hero.jpg"
-                class="card-img-top banner-img"
-                alt="Minecraft landscape screenshot"
-              />
               <div class="card-body">
-                <p class="text-muted mb-0">Add your favorite in-game screenshot here.</p>
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                  <h5 class="card-title mb-0">Online now</h5>
+                  <span id="players-count" class="badge text-bg-primary">--</span>
+                </div>
+                <ul id="players-list" class="list-group list-group-flush">
+                  <li class="list-group-item text-muted">Loading players…</li>
+                </ul>
+                <p id="players-status" class="small text-muted mt-3 mb-0"></p>
               </div>
             </div>
           </div>
@@ -91,21 +93,19 @@
             </ul>
           </div>
           <div class="col-lg-6">
-            <div class="card h-100">
-              <div class="ratio ratio-16x9">
-                <iframe
-                  src="https://maps.lentium.xyz/?worldname=world&mapname=surface&zoom=2&x=-88&y=64&z=537"
-                  title="Lentium map preview"
-                  loading="lazy"
-                  referrerpolicy="no-referrer-when-downgrade"
-                  style="border: 0;"
-                  allowfullscreen
-                ></iframe>
-              </div>
-              <!-- <div class="card-body">
-                <p class="text-muted mb-0">Live map preview near spawn.</p>
-              </div> -->
+            <div class="ratio ratio-16x9">
+              <iframe
+                src="https://maps.lentium.xyz/?worldname=world&mapname=surface&zoom=2&x=-88&y=64&z=537"
+                title="Lentium map preview"
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+                style="border: 0;"
+                allowfullscreen
+              ></iframe>
             </div>
+            <a class="btn btn-accent mt-3 map-button" href="https://maps.lentium.xyz/?worldname=world&mapname=surface&zoom=0&x=-1319&y=64&z=582" target="_blank" rel="noopener">
+              Open Dynmap
+            </a>
           </div>
         </div>
       </div>
@@ -175,6 +175,47 @@
       </div>
     </section>
 
+    <section id="players" class="py-5 bg-white border-top border-bottom">
+      <div class="container">
+        <div class="row g-4 align-items-center justify-content-center">
+          <div class="col-12 d-flex justify-content-center">
+            <div class="card h-100 shadow-sm players-carousel">
+              <div id="playersCarousel" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-indicators">
+                  <button type="button" data-bs-target="#playersCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Screenshot 1"></button>
+                  <button type="button" data-bs-target="#playersCarousel" data-bs-slide-to="1" aria-label="Screenshot 2"></button>
+                  <button type="button" data-bs-target="#playersCarousel" data-bs-slide-to="2" aria-label="Screenshot 3"></button>
+                  <button type="button" data-bs-target="#playersCarousel" data-bs-slide-to="3" aria-label="Screenshot 4"></button>
+                </div>
+                <div class="carousel-inner">
+                  <div class="carousel-item active">
+                    <img src="assets/img/screenshots/1.png" class="d-block w-100 banner-img" alt="Minecraft landscape screenshot 1" />
+                  </div>
+                  <div class="carousel-item">
+                    <img src="assets/img/screenshots/2.png" class="d-block w-100 banner-img" alt="Minecraft landscape screenshot 2" />
+                  </div>
+                  <div class="carousel-item">
+                    <img src="assets/img/screenshots/3.png" class="d-block w-100 banner-img" alt="Minecraft landscape screenshot 3" />
+                  </div>
+                  <div class="carousel-item">
+                    <img src="assets/img/screenshots/4.png" class="d-block w-100 banner-img" alt="Minecraft landscape screenshot 4" />
+                  </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#playersCarousel" data-bs-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#playersCarousel" data-bs-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Next</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section id="rules" class="py-5 bg-white border-top">
       <div class="container">
         <h2 class="section-title mb-4">Server rules</h2>
@@ -231,5 +272,6 @@
       integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
       crossorigin="anonymous"
     ></script>
+    <script src="assets/js/players.js"></script>
   </body>
 </html>

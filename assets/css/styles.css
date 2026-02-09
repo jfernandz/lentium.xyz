@@ -23,11 +23,11 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --color-bg: #0B1220;
+    --color-bg: #0F172A;
     --color-surface: #111827;
-    --color-border: #1F2937;
-    --color-text-muted: #9CA3AF;
-    --color-text-primary: #E5E7EB;
+    --color-border: #6B7280;
+    --color-text-muted: #E5E7EB;
+    --color-text-primary: #F9FAFB;
 
     --color-primary: #39A7FF;
     --color-primary-active: #1D82D5;
@@ -138,6 +138,44 @@ body {
   height: auto;
   display: block;
   background: var(--color-surface);
+}
+
+.text-bg-primary {
+  background-color: var(--color-primary) !important;
+  color: #FFFFFF !important;
+}
+
+#players-count {
+  background-color: var(--color-accent) !important;
+  color: #FFFFFF !important;
+}
+
+.text-bg-light {
+  background-color: var(--color-focus-bg) !important;
+  color: var(--color-text-muted) !important;
+  border: 1px solid var(--color-border);
+}
+
+.players-carousel {
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.map-button {
+  display: block;
+  width: 70%;
+  max-width: 360px;
+  margin: 0.75rem auto 0;
+}
+
+#players-list .list-group-item {
+  background-color: var(--color-surface);
+  color: var(--color-text-primary);
+  border-color: transparent;
+}
+
+#players-list .list-group-item.text-muted {
+  color: var(--color-text-muted) !important;
 }
 
 .brand-logo {
