@@ -27,9 +27,25 @@
       listEl.appendChild(empty);
     } else {
       players.forEach((player) => {
+        const name = player.name ?? "Unknown";
         const item = document.createElement("li");
         item.className = "list-group-item d-flex justify-content-between align-items-center";
-        item.textContent = player.name ?? "Unknown";
+
+        const nameWrap = document.createElement("div");
+        nameWrap.className = "d-flex align-items-center gap-2";
+
+        const avatar = document.createElement("img");
+        avatar.className = "player-avatar";
+        avatar.alt = `${name} avatar`;
+        avatar.loading = "lazy";
+        avatar.src = `https://cravatar.eu/avatar/${encodeURIComponent(name)}`;
+
+        const label = document.createElement("span");
+        label.textContent = name;
+
+        nameWrap.appendChild(avatar);
+        nameWrap.appendChild(label);
+        item.appendChild(nameWrap);
 
         const meta = document.createElement("span");
         meta.className = "badge text-bg-light text-muted";

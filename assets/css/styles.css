@@ -168,6 +168,15 @@ body {
   margin: 0.75rem auto 0;
 }
 
+.player-avatar {
+  width: 22px;
+  height: 22px;
+  border-radius: 4px;
+  object-fit: cover;
+  border: 1px solid var(--color-border);
+  background: var(--color-surface);
+}
+
 #players-list .list-group-item {
   background-color: var(--color-surface);
   color: var(--color-text-primary);
